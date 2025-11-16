@@ -9,6 +9,18 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="mode-select">
+        <button id="modeFriend" class="active">Player vs Player</button>
+        <button id="modeAI">Player vs AI</button>
+    </div>
+
+    <div class="difficulty-select">
+        <span>Difficulty:</span>
+        <button id="difficultyEasy" class="active">Easy</button>
+        <button id="difficultyMedium">Medium</button>
+        <button id="difficultyHard">Hard</button>
+    </div>
+    
     <div class="board" id="board">
         <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
@@ -20,9 +32,11 @@
         <div class="cell" data-cell></div>
         <div class="cell" data-cell></div>
     </div>
-    <div class="winning-message " id="winningMessage">
+
+    <div class="winning-message" id="winningMessage">
         <div data-winning-message-text></div>
         <button id="restartButton">Restart</button>
     </div>
 </body>
+
 </html>

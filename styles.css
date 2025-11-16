@@ -11,6 +11,73 @@
 body{
     margin: 0;
 }
+
+.mode-select {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.mode-select button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+}
+
+.mode-select button.active {
+    background-color: black;
+    color: white;
+}
+.difficulty-select {
+    position: fixed;
+    top: 3.3rem;             
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    z-index: 9;
+}
+
+.difficulty-select span {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.difficulty-select button {
+    padding: 0.25rem 0.7rem;
+    font-size: 0.8rem;
+    border-radius: 999px;
+    border: 1px solid #000;
+    background-color: white;
+    cursor: pointer;
+}
+
+.difficulty-select button.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.difficulty-select.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.difficulty-select.disabled button {
+    cursor: not-allowed !important;
+}
+
 .board {
     width: 100vw;
     height: 100vh;
@@ -138,3 +205,51 @@ border-color: white;
 .winning-message.show{
     display:flex;
 }
+
+@media (max-width: 553px) {
+
+    :root {
+      --cell-size: 75px;
+    }
+  
+    /* BOARD mai jos - evităm să fie acoperit */
+    .board {
+      margin-top: 150px;     /* înainte era prea sus */
+      height: calc(100vh - 200px); 
+    }
+  
+    /* Mode select - butoanele unul sub altul */
+    .mode-select {
+      top: 0.8rem;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+  
+    .mode-select button {
+      width: 230px;
+      padding: 0.6rem 0;
+      font-size: 1rem;
+    }
+  
+    /* Difficulty select */
+    .difficulty-select {
+      top: 6.8rem;            /* mutată MAI JOS față de înainte */
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0.6rem 1rem;
+    }
+  
+    .difficulty-select span {
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+  
+    .difficulty-select button {
+      padding: 0.35rem 0.7rem;
+      font-size: 0.85rem;
+    }
+  }
+  
+  
