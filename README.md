@@ -1,5 +1,11 @@
 # Tic Tac Toe
 
+## Live Demo
+
+https://andravalciu.github.io/tic-tac-toe/
+
+---
+
 ## Tech Stack
 
 ![HTML5](https://img.shields.io/badge/HTML5-Markup-E34F26?style=for-the-badge&logo=html5&logoColor=white)
