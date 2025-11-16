@@ -7,8 +7,8 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Frontend](https://img.shields.io/badge/Frontend-UI-orange?style=for-the-badge)
 
-A simple browser-based **Tic Tac Toe** game built using **HTML, CSS and vanilla JavaScript**.  
-The game supports **two players (X vs O)** on the same device, with automatic **win / draw detection** and a **restart** button.
+A browser-based **Tic Tac Toe** game built using **HTML, CSS and vanilla JavaScript**.  
+The game supports **Player vs Player** and **Player vs AI** with three difficulty levels, plus responsive layout for mobile.
 
 ---
 
@@ -17,21 +17,62 @@ The game supports **two players (X vs O)** on the same device, with automatic **
 This project focuses on:
 
 - Building a clean, responsive **3x3 game grid** using CSS Grid
-- Implementing **turn-based game logic** in JavaScript
-- Detecting **winning combinations** and **draws**
-- Displaying a **full-screen overlay** for the final result (Win / Draw)
+- Implementing **turn-based game logic** in vanilla JavaScript
+- Supporting multiple game modes: **vs Friend** and **vs AI**
+- Implementing **three AI difficulty levels** (Easy, Medium, Hard)
+- Showing a full-screen overlay for **win / draw** states
 
-The goal of the project is to practice **core web fundamentals (HTML/CSS/JS)** and simple **game logic** without using any frameworks.
+The goal of this project is to practice **core front-end fundamentals** and basic game/AI logic without using any frameworks.
+
+---
+
+## Screenshots
+
+### Desktop gameplay
+
+![Desktop gameplay](assets/screenshots/desktop-game.png)
+
+### Mobile layout (Player vs AI + difficulty selector)
+
+![Mobile view](assets/screenshots/mobile-game.png)
+
+### Win overlay
+
+![Win overlay](assets/screenshots/win-overlay.png)
 
 ---
 
 ## ✅ Features
 
-### Gameplay
+### Game Modes
 
-- Two-player **X vs O** on the same device
-- The current player is indicated through **hover effects** on the board
-- Cells can be clicked **only once** (thanks to `{ once: true }` in the event listener)
+- **Player vs Player**
+
+  - Classic local 1v1 on the same device
+  - Turn indicator using hover effects
+
+- **Player vs AI**
+  - Human always plays as **X**
+  - AI plays as **O**
+  - Three difficulty levels: **Easy / Medium / Hard**
+
+---
+
+### Difficulty Levels (AI)
+
+- **Easy**
+
+  - AI chooses a random available cell
+
+- **Medium**
+
+  - AI first checks if it can **win in one move**
+  - If not, it checks if the player can win in the next move and **blocks**
+  - Otherwise, it falls back to a random move
+
+- **Hard (Minimax)**
+  - AI uses the **Minimax algorithm** to evaluate the board
+  - Plays optimally: it will never lose (only win or draw if the player also plays perfectly)
 
 ### Win Detection
 
@@ -64,3 +105,19 @@ Through this project I practiced:
 - Using CSS Grid and CSS variables for layout and sizing
 - Working with DOM events (addEventListener, { once: true })
 - Building a clean, reusable win/draw detection system
+
+---
+
+### Responsive Design
+
+On larger screens:
+
+- Mode and difficulty selectors are displayed horizontally at the top
+- The game board is centered both vertically and horizontally
+
+On small screens (under ~553px):
+
+- Mode buttons stack vertically
+- Difficulty selector moves below and adapts to a pill-style control
+- The board is moved lower to avoid overlap with the controls
+- Cell size scales down using CSS variables (--cell-size)
